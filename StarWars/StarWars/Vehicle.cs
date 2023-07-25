@@ -1,7 +1,6 @@
 ﻿namespace StarWars
 {
-    public class Class1
+    internal class Vehicle
     {
-
     }
 }
