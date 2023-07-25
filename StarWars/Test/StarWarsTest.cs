@@ -44,4 +44,37 @@ public class StarWarsTest
         var result = starship.Reload();
         Assert.IsInstanceOfType(result, typeof(string));
     }
+
+    [TestMethod]
+    public void TestCorvetteStarshipCreate()
+    {
+        StarshipFactory factory = new StarshipFactory();
+        var result = factory.Create("corvette");
+        Assert.IsInstanceOfType(result, typeof(CorvetteStarship));
+    }
+
+    [TestMethod]
+    public void TestDestroyerStarshipCreate()
+    {
+        StarshipFactory factory = new StarshipFactory();
+        var result = factory.Create("destroyer");
+        Assert.IsInstanceOfType(result, typeof(StarDestroyerStarship));
+    }
+
+    [TestMethod]
+    public void TestStarshipCountPassengers()
+    {
+        CorvetteStarship starship = new CorvetteStarship();
+        var result = starship.CountPassengers();
+        Assert.IsInstanceOfType(result, typeof(int));
+    }
+
+    [TestMethod]
+    public void TestStarshipAttack()
+    {
+        CorvetteStarship corvette = new CorvetteStarship();
+        StarDestroyerStarship starship = new StarDestroyerStarship();
+        var result = starship.Attack(corvette);
+        Assert.IsInstanceOfType(result, typeof(string));
+    }
 }
