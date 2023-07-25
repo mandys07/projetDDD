@@ -1,5 +1,5 @@
-ï»¿################################################################################
-# Ce fichier .gitignore a Ã©tÃ© automatiquement crÃ©Ã© par Microsoft(R) Visual Studio.
+################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
 /StarWars/.vs/StarWars/FileContentIndex/0a8fe30a-8ffc-4e3d-b293-008c03dd2dc6.vsidx
@@ -7,4 +7,10 @@
 /StarWars/.vs/StarWars/FileContentIndex/8fa032c8-4c87-4d8d-98f0-13d78053700e.vsidx
 /StarWars/.vs/StarWars/FileContentIndex/14f3c844-5d00-43b8-afc6-ed329507f011.vsidx
 /StarWars/.vs/StarWars/FileContentIndex/8fa032c8-4c87-4d8d-98f0-13d78053700e.vsidx
+/ProjectEvaluation/
+/StarWars/DesignTimeBuild/
+/StarWars/FileContentIndex/
+/StarWars/v17/
 /.gitignore
+/StarWars/.vs/StarWars/FileContentIndex/20f6f5a0-db59-47a8-ae6e-2d49cf76f98a.vsidx
+/StarWars/.vs/StarWars/FileContentIndex
