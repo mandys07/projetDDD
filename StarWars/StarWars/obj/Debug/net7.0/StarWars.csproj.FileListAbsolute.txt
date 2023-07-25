@@ -1,0 +1,15 @@
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\bin\Debug\net7.0\StarWars.deps.json
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\bin\Debug\net7.0\StarWars.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\bin\Debug\net7.0\StarWars.pdb
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.csproj.AssemblyReference.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.AssemblyInfoInputs.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.AssemblyInfo.cs
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.csproj.CoreCompileInputs.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\refint\StarWars.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.pdb
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\ref\StarWars.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\bin\Debug\net7.0\StarWars.exe
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\bin\Debug\net7.0\StarWars.runtimeconfig.json
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\StarWars\obj\Debug\net7.0\StarWars.genruntimeconfig.cache

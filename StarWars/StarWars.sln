@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars", "StarWars\StarWars.csproj", "{1A63EA0A-A58C-4D8C-8FB0-06879DEE7110}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars", "StarWars\StarWars.csproj", "{0ED402D3-FA4A-4ECE-A36B-00B9774240D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1A63EA0A-A58C-4D8C-8FB0-06879DEE7110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A63EA0A-A58C-4D8C-8FB0-06879DEE7110}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A63EA0A-A58C-4D8C-8FB0-06879DEE7110}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A63EA0A-A58C-4D8C-8FB0-06879DEE7110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED402D3-FA4A-4ECE-A36B-00B9774240D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED402D3-FA4A-4ECE-A36B-00B9774240D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED402D3-FA4A-4ECE-A36B-00B9774240D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED402D3-FA4A-4ECE-A36B-00B9774240D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C47B1B71-ED07-4184-8C66-0C9AD1F11799}
+		SolutionGuid = {B1F75765-350A-43D1-A2EC-80F38E87125C}
 	EndGlobalSection
 EndGlobal
