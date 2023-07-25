@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        IVehicle vehicle1 = new Starships();
+        IVehicle vehicle1 = new Starship();
         Pilot pilot = new Pilot(vehicle1);
 
         Console.WriteLine($"Véhicule de type : {vehicle1.GetType()}");
