@@ -4,18 +4,18 @@ namespace PoetryHexagon.Adapters;
 
 public class WritePoemUseCase : IWritePoem
 {
-    private readonly IObtainPoems poemReader;
-    private readonly IWriteLines writer;
+    private readonly IObtainPoems _poemReader;
+    private readonly IWriteLines _writer;
 
     public WritePoemUseCase(IObtainPoems poemReader, IWriteLines writer)
     {
-        this.poemReader = poemReader;
-        this.writer = writer;
+        _poemReader = poemReader;
+        _writer = writer;
     }
 
     public void WritePoem(string poemContent)
     {
-        string poem = poemReader.GetPoem();
-        writer.WriteLine(poemContent);
+        string poem = _poemReader.GetPoem();
+        _writer.WriteLine(poemContent);
     }
 }

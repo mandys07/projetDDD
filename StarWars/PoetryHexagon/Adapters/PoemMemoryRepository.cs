@@ -4,10 +4,10 @@ namespace PoetryHexagon.Adapters;
 
 public class PoemMemoryRepository : IObtainPoems
 {
-    private string poem = "This a poem";
+    public string Poem = "This a poem";
 
     public string GetPoem()
     {
-        return poem;
+        return Poem;
     }
 }
