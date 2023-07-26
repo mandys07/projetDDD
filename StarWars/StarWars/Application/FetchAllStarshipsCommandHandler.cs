@@ -1,25 +1,15 @@
-﻿using StarWars.Services;
+﻿using StarWars.Entities;
+using StarWars.Services;
 
 namespace StarWars.Application;
 
-public class FetchAllStarshipsCommandHandler : IStarshipCommandBus<string>
+public class FetchAllStarshipsCommandHandler : IHandler<string>
 {
-    private readonly ISwapiApi _api;
-
-    public FetchAllStarshipsCommandHandler(ISwapiApi api)
+    public void Handle(string data)
     {
-        _api = api;
-    }
-
-    public async Task<string> Execute()
-    {
-        var entities = await _api.GetAll();
-
-        if (entities is null)
+        foreach (var starship in data)
         {
-            throw new Exception("Erreur");
+            //Console.WriteLine($"Name: {starship.Name}, Model: {starship.Model}, Manufacturer: {starship.Manufacturer}");
         }
-
-        return entities;
     }
 }

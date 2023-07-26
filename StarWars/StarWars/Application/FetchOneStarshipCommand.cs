@@ -1,26 +1,25 @@
-﻿using StarWars.Services;
+﻿using StarWars.Entities;
+using StarWars.Services;
 
 namespace StarWars.Application;
 
-public class FetchOneStarshipCommand
+public class FetchOneStarshipCommand : ICommand
 {
-    //id param
+    private readonly StarshipCommandBus _commandBus;
     private readonly ISwapiApi _api;
+    public int Id { get; set; }
 
-    public FetchOneStarshipCommand(ISwapiApi api)
+    public FetchOneStarshipCommand(StarshipCommandBus commandBus, ISwapiApi api, int id)
     {
+        _commandBus = commandBus;
         _api = api;
+        Id = id;
     }
 
-    public async Task<string> Execute()
+    public async Task Execute()
     {
-        var entities = await _api.GetElementById(1);
-
-        if (entities is null)
-        {
-            throw new Exception("Erreur");
-        }
-
-        return entities;
+        var starship = await _api.GetElementById(Id);
+        //mapping starshipDTO
+        _commandBus.Handle(starship);
     }
 }
