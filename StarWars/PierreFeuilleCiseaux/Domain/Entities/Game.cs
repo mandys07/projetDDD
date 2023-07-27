@@ -1,50 +1,96 @@
-﻿namespace PierreFeuilleCiseaux.Domain.Entities;
+﻿using PierreFeuilleCiseaux.Domain.Enum;
+
+namespace PierreFeuilleCiseaux.Domain.Entities;
 
 public class Game
 {
-    public Player Player1 { get; set; }
-    public Player Player2 { get; set; }
-    public int Rounds { get; set; }
+    public Player Player { get; set; }
+    public Player Computer { get; set; }
+    public int NbRounds { get; set; }
     public Player? Winner { get; set; }
+    public List<string> Historical { get; set; }
 
-    public Game(Player player1, Player player2)
+    public Game(Player player)
     {
-        Player1 = player1;
-        Player2 = player2;
-        Rounds = 0;
+        Player = player;
+        Computer = new Player("Computer");
+        NbRounds = 0;
         Winner = null;
+        Historical = new List<string>
+        {
+            "---------------------------------------------------------",
+            "Rounds historical :"
+        };
     }
 
-    public string Play()
+    public void Init()
     {
+        Play();
+        ReplayOrFinish();
+    }
+
+    public void Play()
+    {
+        if(NbRounds == 0)
+        {
+            Console.WriteLine("------------------------- GAME ON -----------------------");
+        }
+
         while(Winner is null)
         {
-            Rounds++;
-            Console.WriteLine($"Round {Rounds} : ");
-            PlayRound(Player1, Player2);
+            NbRounds++;
+            Historical.Add($"Round {NbRounds} : ");
+            Historical.AddRange(PlayRound(Player, Computer));
             
-            if (Player1.NbRoundsWon > 1)
+            if (Player.NbRoundsWon > 1)
             {
-                Winner = Player1;
+                Winner = Player;
             }
 
-            if (Player2.NbRoundsWon > 1)
+            if (Computer.NbRoundsWon > 1)
             {
-                Winner = Player2;
+                Winner = Computer;
             }
         }
 
-        return DisplayWinner();
+        Historical.Add($"The player {Winner!.Name} won the game !");
+        Console.WriteLine(DisplayWinner());
     }
 
-    public Player? PlayRound(Player player1, Player player2)
+    public void ReplayOrFinish()
+    {
+        Console.WriteLine("Choose 1 to play again or 2 to display historical rounds :");
+        string userInput = Console.ReadLine();
+        int userChoice = int.Parse(userInput);
+
+        if(userChoice == 1)
+            Replay(Player);
+
+        DisplayHistorical();
+    }
+
+    public List<string> PlayRound(Player player1, Player player2)
     {
         var round = new Round(player1, player2);
-        return round.Play();
+        return round.Compare();
     }
 
     public string DisplayWinner()
     {
-        return $"The player {Winner!.Name} won !";
+        return $"The player {Winner!.Name} won the game !";
+    }
+
+    public void DisplayHistorical()
+    {
+        foreach(var roundInfo in Historical)
+        {
+            Console.WriteLine(roundInfo);
+        }
+    }
+
+    public void Replay(Player player)
+    {
+        Game game = new Game(player);
+        game.Play();
     }
 }

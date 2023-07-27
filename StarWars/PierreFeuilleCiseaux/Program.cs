@@ -1,10 +1,8 @@
 ﻿using PierreFeuilleCiseaux.Domain.Entities;
 
-Player player1 = new Player("Toto");
-Player player2 = new Player("Titi");
-Game game = new Game(player1, player2);
+Player player = new Player("Toto");
+Game game = new Game(player);
 
-var winner = game.Play();
-Console.WriteLine(winner);
+game.Init();
 
 

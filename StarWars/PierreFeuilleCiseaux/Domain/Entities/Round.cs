@@ -5,46 +5,91 @@ namespace PierreFeuilleCiseaux.Domain.Entities;
 
 public class Round
 {
-    public Player Player1 { get; set; }
-    public Player Player2 { get; set; }
-    public Sign? Sign1 { get; set; }
-    public Sign? Sign2 { get; set; }
+    public Player Player { get; set; }
+    public Player Computer { get; set; }
+    public List<string> Historical { get; set; }
 
-    public Round(Player player1, Player player2)
+    public Round(Player player, Player computer)
     {
-        Player1 = player1;
-        Player2 = player2;
-        Sign1 = null;
-        Sign2 = null;
+        Player = player;
+        Computer = computer;
+        Historical= new List<string>();
     }
 
-    public Player? Play()
+    public List<string> Compare()
     {
-        Random random = new Random();
-        Sign1 = (Sign)random.Next(1, 4);
-        Console.WriteLine($"{Player1.Name} play {Sign1.Value.ToString()}");
-        Sign2 = (Sign)random.Next(1, 4);
-        Console.WriteLine($"{Player2.Name} play {Sign2.Value.ToString()}");
+        var signPlayer = PlayerChoose();
+        var signComputer = ComputerChoose();
 
-        if (Sign1 == Sign2)
+        Historical.Add($"{Player.Name} choose {signPlayer.ToString()}");
+        Historical.Add($"{Computer.Name} choose {signComputer.ToString()}");
+
+        Console.WriteLine($"{Player.Name} choose {signPlayer.ToString()}");
+        Console.WriteLine($"{Computer.Name} choose {signComputer.ToString()}");
+
+        if (signPlayer == signComputer)
         {
+            Historical.Add($"--> Equal");
             Console.WriteLine($"--> Equal");
-            return null;
+            return Historical;
         }
 
-        if (Sign1 == Sign.Rock && Sign2 == Sign.Scissors ||
-            Sign1 == Sign.Paper && Sign2 == Sign.Rock    ||
-            Sign1 == Sign.Scissors && Sign2 == Sign.Paper)
+        if (signPlayer == Sign.Rock && signComputer == Sign.Scissors ||
+            signPlayer == Sign.Paper && signComputer == Sign.Rock    ||
+            signPlayer == Sign.Scissors && signComputer == Sign.Paper)
         {
-            Console.WriteLine($"--> {Player1.Name}");
-            Player1.NbRoundsWon++;
-            return Player1;
+            Historical.Add($"--> {Player.Name}");
+            Console.WriteLine($"--> {Player.Name}");
+            Player.NbRoundsWon++;
         }
         else
         {
-            Console.WriteLine($"--> {Player2.Name}");
-            Player2.NbRoundsWon++;
-            return Player2;
-        }          
+            Historical.Add($"--> {Computer.Name}");
+            Console.WriteLine($"--> {Computer.Name}");
+            Computer.NbRoundsWon++;
+        }      
+        
+        return Historical;
+    }
+
+    public Sign PlayerChoose()
+    {
+        while (true)
+        {
+            Console.WriteLine("---------------------------------------------------------");
+            Console.WriteLine("Please choose a sign :");
+            Console.WriteLine("(Note : 1 - Rock | 2 - Paper | 3 - Scissors)");
+            string userInput = Console.ReadLine();
+
+            if (IsNumber(userInput))
+            {
+                int signId = int.Parse(userInput);
+
+                if (signId >= 1 && signId <= 3)
+                {
+                    return (Sign)signId;
+                }
+            }
+
+            Console.WriteLine("The entry is not valid. Try again !");
+        }
+    }
+
+    public Sign ComputerChoose()
+    {
+        Random random = new Random();
+        return (Sign)random.Next(1, 4);
+    }
+
+    static bool IsNumber(string input)
+    {
+        foreach (char c in input)
+        {
+            if (!char.IsDigit(c))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
