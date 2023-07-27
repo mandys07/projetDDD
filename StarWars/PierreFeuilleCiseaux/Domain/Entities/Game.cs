@@ -31,11 +31,6 @@ public class Game
 
     public void Play()
     {
-        if(NbRounds == 0)
-        {
-            Console.WriteLine("------------------------- GAME ON -----------------------");
-        }
-
         while(Winner is null)
         {
             NbRounds++;
