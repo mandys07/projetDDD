@@ -91,6 +91,6 @@ public class Game
     public void Replay(Player player)
     {
         Game game = new Game(player);
-        game.Play();
+        game.Init();
     }
 }
