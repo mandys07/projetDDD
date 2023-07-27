@@ -6,21 +6,15 @@ public class Game
 {
     public Player Player { get; set; }
     public Player Computer { get; set; }
-    public int NbRounds { get; set; }
+    public List<Round> Rounds { get; set; }
     public Player? Winner { get; set; }
-    public List<string> Historical { get; set; }
 
     public Game(Player player)
     {
         Player = player;
         Computer = new Player("Computer");
-        NbRounds = 0;
+        Rounds = new List<Round>();
         Winner = null;
-        Historical = new List<string>
-        {
-            "---------------------------------------------------------",
-            "Rounds historical :"
-        };
     }
 
     public void Init()
@@ -29,14 +23,16 @@ public class Game
         ReplayOrFinish();
     }
 
-    public void Play()
+    public string Play()
     {
         while(Winner is null)
         {
-            NbRounds++;
-            Historical.Add($"Round {NbRounds} : ");
-            Historical.AddRange(PlayRound(Player, Computer));
-            
+            PlayRound(Player, Computer);
+            Console.WriteLine($"Round {Rounds.Count} : ");
+            Console.WriteLine($"{Rounds[Rounds.Count - 1].Player.Name} choose {Rounds[Rounds.Count - 1].SignPlayer}");
+            Console.WriteLine($"{Rounds[Rounds.Count - 1].Computer.Name} choose {Rounds[Rounds.Count - 1].SignComputer}");
+            Console.WriteLine($"--> {Rounds[Rounds.Count - 1].Winner!.Name} won");
+
             if (Player.NbRoundsWon > 1)
             {
                 Winner = Player;
@@ -48,8 +44,7 @@ public class Game
             }
         }
 
-        Historical.Add($"The player {Winner!.Name} won the game !");
-        Console.WriteLine(DisplayWinner());
+        return DisplayWinner();
     }
 
     public void ReplayOrFinish()
@@ -64,10 +59,11 @@ public class Game
         DisplayHistorical();
     }
 
-    public List<string> PlayRound(Player player1, Player player2)
+    public void PlayRound(Player player, Player computer)
     {
-        var round = new Round(player1, player2);
-        return round.Compare();
+        var round = new Round(player, computer);
+        round.Compare();
+        Rounds.Add(round);
     }
 
     public string DisplayWinner()
@@ -77,10 +73,15 @@ public class Game
 
     public void DisplayHistorical()
     {
-        foreach(var roundInfo in Historical)
+        Console.WriteLine($"------------------ HISTORICAL GAME ROUNDS --------------");
+        for (var i = 0; i < Rounds.Count; i++)
         {
-            Console.WriteLine(roundInfo);
+            Console.WriteLine($"Round {i} : ");
+            Console.WriteLine($"{Rounds[i].Player.Name} choose {Rounds[i].SignPlayer}");
+            Console.WriteLine($"{Rounds[i].Computer.Name} choose {Rounds[i].SignComputer}");
+            Console.WriteLine($"--> {Rounds[i].Winner!.Name} won");
         }
+        Console.WriteLine($"The player {Winner!.Name} won the game !");
     }
 
     public void Replay(Player player)

@@ -7,49 +7,41 @@ public class Round
 {
     public Player Player { get; set; }
     public Player Computer { get; set; }
-    public List<string> Historical { get; set; }
+    public Sign? SignPlayer { get; set; }
+    public Sign? SignComputer { get; set; }
+    public Player? Winner { get; set; }
 
     public Round(Player player, Player computer)
     {
         Player = player;
         Computer = computer;
-        Historical= new List<string>();
+        SignPlayer = null;
+        SignComputer = null;
+        Winner = null;
     }
 
-    public List<string> Compare()
+    public void Compare()
     {
-        var signPlayer = PlayerChoose();
-        var signComputer = ComputerChoose();
+        SignPlayer = PlayerChoose();
+        SignComputer = ComputerChoose();
 
-        Historical.Add($"{Player.Name} choose {signPlayer.ToString()}");
-        Historical.Add($"{Computer.Name} choose {signComputer.ToString()}");
-
-        Console.WriteLine($"{Player.Name} choose {signPlayer.ToString()}");
-        Console.WriteLine($"{Computer.Name} choose {signComputer.ToString()}");
-
-        if (signPlayer == signComputer)
+        if (SignPlayer == SignComputer)
         {
-            Historical.Add($"--> Equal");
-            Console.WriteLine($"--> Equal");
-            return Historical;
+            Winner = null;
         }
 
-        if (signPlayer == Sign.Rock && signComputer == Sign.Scissors ||
-            signPlayer == Sign.Paper && signComputer == Sign.Rock    ||
-            signPlayer == Sign.Scissors && signComputer == Sign.Paper)
+        if (SignPlayer == Sign.Rock && SignComputer == Sign.Scissors ||
+            SignPlayer == Sign.Paper && SignComputer == Sign.Rock    ||
+            SignPlayer == Sign.Scissors && SignComputer == Sign.Paper)
         {
-            Historical.Add($"--> {Player.Name}");
-            Console.WriteLine($"--> {Player.Name}");
             Player.NbRoundsWon++;
+            Winner = Player;
         }
         else
         {
-            Historical.Add($"--> {Computer.Name}");
-            Console.WriteLine($"--> {Computer.Name}");
             Computer.NbRoundsWon++;
+            Winner = Computer;
         }      
-        
-        return Historical;
     }
 
     public Sign PlayerChoose()

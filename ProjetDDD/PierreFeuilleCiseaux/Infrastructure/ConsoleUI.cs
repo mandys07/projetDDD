@@ -13,6 +13,7 @@ public class ConsoleUI
 
     public void StartGame()
     {
+        Console.WriteLine("---------------------------------------------------------");
         Console.WriteLine("------------------------- GAME ON -----------------------");
         GameService.PlayGame();
     }
