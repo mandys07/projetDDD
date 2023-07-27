@@ -4,4 +4,7 @@ Player player1 = new Player("Toto");
 Player player2 = new Player("Titi");
 Game game = new Game(player1, player2);
 
+var winner = game.Play();
+Console.WriteLine(winner);
+
 

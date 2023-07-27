@@ -1,0 +1,15 @@
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\bin\Debug\net7.0\PierreFeuilleCiseaux.exe
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\bin\Debug\net7.0\PierreFeuilleCiseaux.deps.json
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\bin\Debug\net7.0\PierreFeuilleCiseaux.runtimeconfig.json
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\bin\Debug\net7.0\PierreFeuilleCiseaux.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\bin\Debug\net7.0\PierreFeuilleCiseaux.pdb
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.csproj.AssemblyReference.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.AssemblyInfoInputs.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.AssemblyInfo.cs
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.csproj.CoreCompileInputs.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\refint\PierreFeuilleCiseaux.dll
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.pdb
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\PierreFeuilleCiseaux.genruntimeconfig.cache
+C:\Users\mandy\OneDrive\Bureau\M2I\DDD\ProjetDDD\StarWars\PierreFeuilleCiseaux\obj\Debug\net7.0\ref\PierreFeuilleCiseaux.dll

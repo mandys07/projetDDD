@@ -15,15 +15,26 @@ public class Game
         Winner = null;
     }
 
-    public void Play()
+    public string Play()
     {
-        if (Player1.NbRoundsWon > 1)
-            Winner = Player1;
-            //break
-        if (Player2.NbRoundsWon > 1)
-            Winner = Player2;
+        while(Winner is null)
+        {
+            Rounds++;
+            Console.WriteLine($"Round {Rounds} : ");
+            PlayRound(Player1, Player2);
             
-        PlayRound(Player1, Player2);
+            if (Player1.NbRoundsWon > 1)
+            {
+                Winner = Player1;
+            }
+
+            if (Player2.NbRoundsWon > 1)
+            {
+                Winner = Player2;
+            }
+        }
+
+        return DisplayWinner();
     }
 
     public Player? PlayRound(Player player1, Player player2)
@@ -32,8 +43,8 @@ public class Game
         return round.Play();
     }
 
-    public string DisplayWinner(Player player)
+    public string DisplayWinner()
     {
-        return $"The player {player.Name} won !";
+        return $"The player {Winner!.Name} won !";
     }
 }

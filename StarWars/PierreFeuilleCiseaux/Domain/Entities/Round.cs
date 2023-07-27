@@ -22,20 +22,27 @@ public class Round
     {
         Random random = new Random();
         Sign1 = (Sign)random.Next(1, 4);
+        Console.WriteLine($"{Player1.Name} play {Sign1.Value.ToString()}");
         Sign2 = (Sign)random.Next(1, 4);
+        Console.WriteLine($"{Player2.Name} play {Sign2.Value.ToString()}");
 
         if (Sign1 == Sign2)
+        {
+            Console.WriteLine($"--> Equal");
             return null;
+        }
 
         if (Sign1 == Sign.Rock && Sign2 == Sign.Scissors ||
             Sign1 == Sign.Paper && Sign2 == Sign.Rock    ||
             Sign1 == Sign.Scissors && Sign2 == Sign.Paper)
         {
+            Console.WriteLine($"--> {Player1.Name}");
             Player1.NbRoundsWon++;
             return Player1;
         }
         else
         {
+            Console.WriteLine($"--> {Player2.Name}");
             Player2.NbRoundsWon++;
             return Player2;
         }          
