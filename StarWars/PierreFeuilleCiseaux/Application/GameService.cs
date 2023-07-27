@@ -1,6 +1,6 @@
 ﻿using PierreFeuilleCiseaux.Domain.Entities;
 
-namespace PierreFeuilleCiseaux.Domain.Services;
+namespace PierreFeuilleCiseaux.Application;
 
 public class GameService
 {

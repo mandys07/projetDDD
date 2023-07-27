@@ -1,5 +1,5 @@
-﻿using PierreFeuilleCiseaux.Domain.Entities;
-using PierreFeuilleCiseaux.Domain.Services;
+﻿using PierreFeuilleCiseaux.Application;
+using PierreFeuilleCiseaux.Domain.Entities;
 using PierreFeuilleCiseaux.Infrastructure;
 
 Player player = new Player("Toto");
