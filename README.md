@@ -7,4 +7,6 @@ L'ensemble des TP sont regroupés dans ce projet sous forme de sous-projets:
 - PoetryHexagon
 - StarWars (Tests unitaires)
 
-  Il y a également un sous projet dédié aux tests unitaires réalisés : Test
+Il y a également un sous projet dédié aux tests unitaires réalisés : Test
+
+L'Event storming se trouve dans le dossier "Doc"
