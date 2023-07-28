@@ -4,6 +4,7 @@ using Bibliotheque.Domain.Events;
 using Bibliotheque.Infrastructure;
 using Bibliotheque.Infrastructure.Persistance;
 using System;
+using System.Net;
 
 namespace Bibliotheque.Application;
 
@@ -44,8 +45,18 @@ public class LibrairyService
 
     public void BorrowBook(Guid bookId, Guid memberId, DateTime borrowingDate)
     {
-        // Check si livre dispo
+        if (CheckIfBookNotAvailable(bookId))
+        {
+            throw new Exception("Not available");
+        }
+        else
+        {
+            CreateBorrowing(bookId, memberId, borrowingDate);
+        }
+    }
 
+    public void CreateBorrowing(Guid bookId, Guid memberId, DateTime borrowingDate)
+    {
         var borrowing = new Borrowing
         {
             Id = Guid.NewGuid(),
@@ -67,11 +78,11 @@ public class LibrairyService
         _eventDispatcher.Dispatch(eventBorrowing);
     }
 
-    public bool CheckIfBookAvailable(Guid bookId)
+    public bool CheckIfBookNotAvailable(Guid bookId)
     {
         var borrowings = _borrowingsRepository.GetAll();
 
-        return borrowings.Any(b => b.BookId == bookId && b.BorrowingDate <= DateTime.Now && b.ReturnDate is null); //or (b.ReturnDate.HasValue() and b.ReturnDate.Value > DateTime.Now)
+        return borrowings.Any(b => b.BookId == bookId && b.BorrowingDate <= DateTime.Now && b.ReturnDate is null); //or (b.ReturnDate.Value > DateTime.Now)
     }
 }
 
